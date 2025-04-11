@@ -18,7 +18,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-GEMINI_API_KEY =    f"{os.getenv("GEMINI_API_KEY")}" #"AIzaSyDhoAx9LKEwGCYe0DIA8SDQIG7L4oFRnhM"
+GEMINI_APIKEY =    os.getenv("GEMINI_APIKEY")
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -30,7 +30,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY =  f"{os.getenv("SECRET_KEY")}"    #"django-insecure-mfsp6m0s)98$(0o1k3+!$)1+c_9o^@w9f(7_(3fg1hm74w3&v7"
+SECRET_KEY =  os.getenv("SECRET_KEY")   
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True

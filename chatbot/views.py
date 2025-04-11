@@ -13,8 +13,8 @@ load_dotenv()
 
 def chatbot_ui(request):
     return render(request, 'index.html')
-GEMINI_API_URL=os.getenv('GEMINI_API_URL')
-GEMINI_API_KEY=os.getenv('GEMINI_API_KEY')
+GEMINI_API_URL=    os.getenv('GEMINI_API_URL')
+GEMINI_APIKEY= os.getenv('GEMINI_APIKEY') 
 
 @csrf_exempt
 def chat(request):
@@ -31,15 +31,15 @@ def chat(request):
             }
             headers = {"Content-Type": "application/json"}
 
-            response = requests.post(f"{GEMINI_API_URL}?key={GEMINI_API_KEY}", json=payload, headers=headers)
+            response = requests.post(f"{GEMINI_API_URL}?key={GEMINI_APIKEY}", json=payload, headers=headers)
             api_response = response.json()
 
             # Extract only the chatbot's reply
             bot_reply = api_response.get("candidates", [{}])[0].get("content", {}).get("parts", [{}])[0].get("text", "Sorry, I couldn't generate a response.", )
-
+            
             # Format the response for better readability
             formatted_reply = bot_reply.replace("**", "").replace("```", "\n") 
-            print({os.getenv('GEMINI_API_KEY')}) # Remove markdown formatting
+            
 
             return JsonResponse({"reply": formatted_reply})
 
