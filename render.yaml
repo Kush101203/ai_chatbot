@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: ai_chatbot
+    env: python
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "gunicorn ai_chatbot.wsgi:application"
+    envVars:
+      - key: DJANGO_SETTINGS_MODULE
+        value: ai_chatbot.settings
+      - key: PYTHON_VERSION
+        value: 3.10

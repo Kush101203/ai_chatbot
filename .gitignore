@@ -1,0 +1,23 @@
+# Ignore environment variable files
+.env
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# SQLite database
+db.sqlite3
+
+# Virtual environments
+venv/
+
+
+# VS Code settings
+.vscode/
+
+# Django static/media files (optional if you're storing generated files)
+static/
+media/
+
+# Logs
+*.log

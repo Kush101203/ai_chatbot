@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Chatbot</title>
+    
+    <!-- Correct CSS link -->
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <div class="chat-container">
+        <div >
+            <p class="chat-box" id="chat-box"></p>
+        </div>
+        <div class="chat-input">
+            <textarea id="user-input" placeholder="Type a message..."></textarea>
+            <button onclick="sendMessage()" id="send-button">Send</button>
+        </div>
+    </div>
+
+    <!-- Correct JS link -->
+    <script src="{% static 'chat.js' %}"></script>
+</body>
+</html>
